@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Router-Custom-Prompt/static/css/main.f3328df1.chunk.css",
-    "main.js": "/React-Router-Custom-Prompt/static/js/main.9fe77837.chunk.js",
+    "main.css": "/React-Router-Custom-Prompt/static/css/main.be89ac63.chunk.css",
+    "main.js": "/React-Router-Custom-Prompt/static/js/main.2e28f295.chunk.js",
     "runtime-main.js": "/React-Router-Custom-Prompt/static/js/runtime-main.85141ec9.js",
     "static/js/2.f5302fee.chunk.js": "/React-Router-Custom-Prompt/static/js/2.f5302fee.chunk.js",
     "index.html": "/React-Router-Custom-Prompt/index.html",
@@ -11,7 +11,7 @@
   "entrypoints": [
     "static/js/runtime-main.85141ec9.js",
     "static/js/2.f5302fee.chunk.js",
-    "static/css/main.f3328df1.chunk.css",
-    "static/js/main.9fe77837.chunk.js"
+    "static/css/main.be89ac63.chunk.css",
+    "static/js/main.2e28f295.chunk.js"
   ]
 }
