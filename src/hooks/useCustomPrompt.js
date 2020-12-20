@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 import {Prompt} from 'react-router-dom';
-import Modal from '../components/Modal/Modal';
+import Modal from '../components/Modal';
 
 
 const useCustomPrompt = () => {
@@ -20,14 +20,18 @@ const useCustomPrompt = () => {
     setPathTo(location.pathname)
     return '';
   }
-  const CustomPrompt = ({modal, modalProps}) => {
-    const CustomModal = modal
+  const CustomPrompt = ({
+    modal, 
+    modalProps, 
+    ...defaultModalProps
+  }) => {
+    const UserModal = modal
     return (
       <Fragment>
         <Prompt when={!confirm} message={message}/>
-        {CustomModal
-          ? <CustomModal {...modalProps} />
-          : <Modal isActive={modalIsActive} onConfirm={onConfirm} onClose={setModalIsActive}/>
+        {UserModal
+          ? <UserModal {...modalProps} />
+          : <Modal isActive={modalIsActive} onConfirm={onConfirm} onClose={setModalIsActive} {...defaultModalProps}/>
         }
       </Fragment>
     )
