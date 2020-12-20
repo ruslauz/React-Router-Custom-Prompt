@@ -24,3 +24,15 @@
 .content {
 
 }
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  color: #2894ff;
+  & > label {
+    margin-bottom: 10px;
+  }
+  & input {
+    margin-right: 10px;
+  }
+}

@@ -23,10 +23,10 @@ const useCustomPrompt = () => {
   const CustomPrompt = ({
     modal, 
     modalProps,
-    when,
+    showPrompt,
     ...defaultModalProps
   }) => {
-    when = when || !confirm
+    const when = showPrompt && !confirm
     const UserModal = modal
     return (
       <Fragment>
@@ -46,6 +46,7 @@ const useCustomPrompt = () => {
   }, [confirm, pathTo, history])
   
   return {
+    showPrompt: !confirm,
     modalIsActive,
     onConfirm,
     onCancel : setModalIsActive,
