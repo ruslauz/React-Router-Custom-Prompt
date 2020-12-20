@@ -6,8 +6,7 @@ import { HashRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <HashRouter 
-    getUserConfirmation={()=>{}}
-    basename={process.env.PUBLIC_URL}>
+    getUserConfirmation={()=>{}}>
      <App />
   </HashRouter>,
   document.getElementById('root')

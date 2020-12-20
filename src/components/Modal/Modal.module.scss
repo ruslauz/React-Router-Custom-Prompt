@@ -97,12 +97,12 @@
     cursor: pointer;
   }
 
-   & .cancel{
+   & .confirm {
     margin-right: 20px;
     border: 1px solid #E0E0E0;
     color: #fff;
    }
-   & .confirm {
+   & .cancel {
     background: #FEDA00;
     color: #1f243a;
    }

@@ -7,18 +7,21 @@ import cross from '../../img/cross.svg';
 /* import floppy from '../../img/floppy.svg'; */
 
 const Modal = ({
-  isActive, 
+  open, 
   onConfirm, 
-  onClose, 
-  message : modalMessage = 'Do you want to leave the page?',
-  yesButton = 'Yes',
-  noButton = 'No',
+  onCancel, 
+  message : modalMessage,
+  yesButton,
+  noButton,
 }) => {
-  const closeModal = () => onClose(false)
+  modalMessage = modalMessage || 'Do you want to leave the page?'
+  yesButton = yesButton || 'Yes';
+  noButton = noButton|| 'No';
+  const closeModal = () => onCancel(false)
   const onModalClick = e => {
     e.stopPropagation()
   }
-  return isActive ? (
+  return open ? (
     <div className={layer} onClick={closeModal}>
       <div className={modal} onClick={onModalClick}>
         <header className={header}>
@@ -34,8 +37,8 @@ const Modal = ({
         </div>
         <footer className={footer}>
           <div className={buttons}>
-            <button className={cancel} onClick={onConfirm}>{yesButton}</button>
-            <button className={confirm} onClick={closeModal}>{noButton}</button>
+            <button className={confirm} onClick={onConfirm}>{yesButton}</button>
+            <button className={cancel} onClick={closeModal}>{noButton}</button>
           </div>
         </footer>
       </div>
