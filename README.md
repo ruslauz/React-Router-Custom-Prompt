@@ -1,9 +1,8 @@
 # React Router Custom Prompt
 
-This project was bootstrapped with [Creatnpe React App](https://github.com/facebook/create-react-app).
+Showing custom modal instead of native prompt using [React Router Prompt](https://reactrouter.com/web/api/Prompt).
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+The demo can be found on [this page](https://ruslauz.github.io/React-Router-Custom-Prompt/)
 
-### `npm start`
