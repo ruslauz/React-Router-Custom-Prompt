@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/React-Router-Custom-Prompt/static/css/main.f3328df1.chunk.css",
-    "main.js": "/React-Router-Custom-Prompt/static/js/main.42392289.chunk.js",
+    "main.js": "/React-Router-Custom-Prompt/static/js/main.371bff94.chunk.js",
     "runtime-main.js": "/React-Router-Custom-Prompt/static/js/runtime-main.85141ec9.js",
-    "static/js/2.d03a1a95.chunk.js": "/React-Router-Custom-Prompt/static/js/2.d03a1a95.chunk.js",
+    "static/js/2.f5302fee.chunk.js": "/React-Router-Custom-Prompt/static/js/2.f5302fee.chunk.js",
     "index.html": "/React-Router-Custom-Prompt/index.html",
-    "static/js/2.d03a1a95.chunk.js.LICENSE.txt": "/React-Router-Custom-Prompt/static/js/2.d03a1a95.chunk.js.LICENSE.txt",
+    "static/js/2.f5302fee.chunk.js.LICENSE.txt": "/React-Router-Custom-Prompt/static/js/2.f5302fee.chunk.js.LICENSE.txt",
     "static/media/cross.e9e9d91d.svg": "/React-Router-Custom-Prompt/static/media/cross.e9e9d91d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.85141ec9.js",
-    "static/js/2.d03a1a95.chunk.js",
+    "static/js/2.f5302fee.chunk.js",
     "static/css/main.f3328df1.chunk.css",
-    "static/js/main.42392289.chunk.js"
+    "static/js/main.371bff94.chunk.js"
   ]
 }
