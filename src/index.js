@@ -7,7 +7,7 @@ import { HashRouter } from 'react-router-dom';
 ReactDOM.render(
   <HashRouter 
     getUserConfirmation={()=>{}}>
-     <App />
+      <App />
   </HashRouter>,
   document.getElementById('root')
 );

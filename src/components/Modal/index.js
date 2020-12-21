@@ -1,8 +1,6 @@
 import { memo } from 'react';
-import {
-  layer, modal, header, title, body, footer, 
-  buttons, cancel, confirm, close, /* icon, */ message
-} from './Modal.module.scss';
+import { layer, modal, header, title, body, footer, 
+  buttons, cancel, confirm, close, /* icon, */ message} from './Modal.module.scss';
 import cross from '../../img/cross.svg';
 /* import floppy from '../../img/floppy.svg'; */
 
@@ -12,15 +10,15 @@ const Modal = ({
   onCancel, 
   message : modalMessage,
   yesButton,
-  noButton,
-}) => {
-  modalMessage = modalMessage || 'Do you want to leave the page?'
-  yesButton = yesButton || 'Yes';
-  noButton = noButton|| 'No';
-  const closeModal = () => onCancel(false)
-  const onModalClick = e => {
-    e.stopPropagation()
+  noButton }) => {
+    modalMessage = modalMessage || 'Do you want to leave the page?'
+    yesButton = yesButton || 'Yes';
+    noButton = noButton|| 'No';
+    const closeModal = () => onCancel(false)
+    const onModalClick = e => {
+      e.stopPropagation()
   }
+
   return open ? (
     <div className={layer} onClick={closeModal}>
       <div className={modal} onClick={onModalClick}>
@@ -28,7 +26,6 @@ const Modal = ({
           <span className={title}></span>
           <button className={close} onClick={closeModal}><img src={cross} alt="close-button"/></button>
         </header>
-        
         <div className={body}>
           {/* <div className={icon}>
             <img src={floppy} alt="save-icon"/>
