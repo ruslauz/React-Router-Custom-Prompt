@@ -1,55 +1,41 @@
-import { memo, useState } from "react";
+import { memo } from "react";
 import useCustomPrompt from '../../hooks/useCustomPrompt';
+import usePromptPage from '../../hooks/usePromptPage';
 import { Dialog } from 'evergreen-ui';
 
 const PromptPage = () => {
   const { CustomPrompt } = useCustomPrompt();
-  const [showPrompt, setShowPrompt] = useState(true)
-    const [userDialog, setUserDialog] = useState(false);
-    const [message, setMessage] = useState(null);
-    const [yesButton, setYesButton] = useState(null);
-    const [noButton, setNoButton] = useState(null);
-    const setRadios = ({message = null, yesButton = null, noButton = null, userDialog = null}) => {
-      setMessage(message);
-      setYesButton(yesButton);
-      setNoButton(noButton);
-      setUserDialog(userDialog);
-    }
-    const custom = {
-      message: {message: 'Вы действительно хотите покинуть страницу'},
-      buttons: {yesButton: 'Да', noButton: 'Нет'},
-      dialog: {userDialog: true}
-    }
-    const onCheckBox = e => {
-      setShowPrompt(!showPrompt)
-    }
-    const onRadio = e => {
-      setRadios(custom[e.target.value])
-    }
+  // const { showPrompt } = usePromptPage();
+  const { 
+    onCheckBox, onRadio, showPrompt, userDialog, message, yesButton, noButton 
+  } = usePromptPage();
   
   return (
     <div>
       <h1>Click on Another Page link!</h1>
+      {/* <CustomPrompt showPrompt={showPrompt}/> */}
       <CustomPrompt 
         showPrompt={showPrompt}
         message={message}
         yesButton={yesButton}
         noButton={noButton}>
-          {userDialog 
-            ? ({onConfirm, onCancel, showPrompt}) => (
-              <Dialog
-                shouldCloseOnOverlayClick={false}
-                shouldCloseOnEscapePress={false}
-                confirmLabel='Yes'
-                cancelLabel='No'
-                onConfirm={onConfirm} 
-                onCancel={onCancel} 
-                hasHeader={false}
-                isShown={showPrompt}>
-                Do you want to leave the page?
-              </Dialog>)
-            : null 
-          }
+
+        {userDialog 
+          ? ({onConfirm, onCancel, showDialog}) => (
+            <Dialog
+              shouldCloseOnOverlayClick={false}
+              shouldCloseOnEscapePress={false}
+              confirmLabel='Yes'
+              cancelLabel='No'
+              onConfirm={onConfirm} 
+              onCancel={onCancel} 
+              hasHeader={false}
+              isShown={showDialog}>
+              Do you want to leave the page?
+            </Dialog>)
+          : null 
+        }
+
       </CustomPrompt>
       <div className='inputs'>
         <label><input type='checkbox' onChange={onCheckBox} checked={showPrompt}/>Enable Prompt</label>

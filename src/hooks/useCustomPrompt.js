@@ -12,7 +12,10 @@ const useCustomPrompt = () => {
 
   const onConfirm = () => {
     setConfirm(true)
-    setModalIsActive(!modalIsActive)
+  }
+
+  const onCancel = () => {
+    setModalIsActive(false)
   }
 
   const message = (location) => {
@@ -24,18 +27,18 @@ const useCustomPrompt = () => {
 
   const CustomPrompt = ({children, showPrompt, ...defaultModalProps}) => {
     const when = showPrompt && !confirm
-    const userDialogProps = {
-      showPrompt: modalIsActive,
+    const childrenProps = {
+      showDialog: modalIsActive,
       onConfirm,
-      onCancel: setModalIsActive,
+      onCancel,
     }
 
     return (
       <Fragment>
         <Prompt when={when} message={message}/>
         {children && typeof children === 'function'
-          ? children(userDialogProps)
-          : <Modal open={modalIsActive} onConfirm={onConfirm} onCancel={setModalIsActive} {...defaultModalProps}/>
+          ? children(childrenProps)
+          : <Modal open={modalIsActive} onConfirm={onConfirm} onCancel={onCancel} {...defaultModalProps}/>
         }
       </Fragment>
     )
@@ -47,10 +50,7 @@ const useCustomPrompt = () => {
     }
   }, [confirm, pathTo, history])
   
-  return {
-    showPrompt: !confirm,
-    CustomPrompt
-  }
+  return { CustomPrompt }
 }
 
 export default useCustomPrompt;
