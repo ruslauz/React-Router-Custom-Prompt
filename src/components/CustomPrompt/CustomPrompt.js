@@ -15,10 +15,17 @@ import PropTypes from 'prop-types';
       какие-либо вычисления и от их результата зависит нужно ли 
       отображать Prompt;
 
-  children - React Component
+  children - React Component (Dialog | Modal)
     React Component:
       чтобы принять необходимы параметры и передать и в диалоговое окно,
       необходимо передать его как children render prop,
+
+      <CustomPrompt>
+        {({ onCancel, onConfirm, showDialog }) => (
+          <Dialog onCancel={onCancel} onConfirm={onConfirm} isActive={showDialog}/>
+          )}
+      </<CustomPrompt>>
+
     Render Prop Params: 
       onCancel: callback
         предотвращает переход на другую страницу и запускает

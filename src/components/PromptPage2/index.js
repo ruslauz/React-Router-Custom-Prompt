@@ -11,7 +11,7 @@ export const PromptPage2 = () => {
       <button onClick={() => setIsActive(prev => !prev)}>ToggleConfirm</button>
       <h1>PromptPage2</h1>
       <p>Is Prompt Active - {`${isActive}`}</p>
-      <CustomPrompt shouldPrompt={() => true}>
+      <CustomPrompt shouldPrompt={isActive}>
         {
           ({ onCancel, onConfirm, showDialog }) => (
             <Dialog
@@ -19,12 +19,13 @@ export const PromptPage2 = () => {
               shouldCloseOnEscapePress={false}
               confirmLabel='Нет'
               cancelLabel='Сохранить'
-              onConfirm={() => onConfirm()} // onCancel
-              onCancel={() => onCancel()} //onConfirm
+              onConfirm={() => onConfirm()}
+              onCancel={() => onCancel()}
               hasHeader={false}
               isShown={showDialog}>
                 Сохранить изменения?
-            </Dialog>)
+            </Dialog>
+          )
         }
       </CustomPrompt>
     </>
