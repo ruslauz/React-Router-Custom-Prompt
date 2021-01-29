@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
-export const useCustomPrompt = (/* onBeforeConfirm, onBeforeCancel, */ shouldPrompt = false) => {
+export const useCustomPrompt = ( shouldPrompt = false) => {
   const [isPromptActive, setIsPromptActive] = useState(null);
   const [showDialog, setShowDialog] = useState(false);
   const [nextLocation, setNextLocation] = useState('')
@@ -9,12 +9,10 @@ export const useCustomPrompt = (/* onBeforeConfirm, onBeforeCancel, */ shouldPro
   const currentLocation = useLocation().pathname;
 
   const onConfirm = useCallback(() => {
-    /* typeof onBeforeConfirm === "function" && onBeforeConfirm(); */
     setIsPromptActive(false)
   }, []);
 
   const onCancel = useCallback(() => {
-    /* typeof onBeforeCancel === "function" && onBeforeCancel(); */
     setShowDialog(false);
     setNextLocation(currentLocation);
   }, [currentLocation])

@@ -15,21 +15,6 @@ import PropTypes from 'prop-types';
       какие-либо вычисления и от их результата зависит нужно ли 
       отображать Prompt;
 
-  onBeforeConfirm? - callback
-    переданый в него callback будет вызываться при
-    вызове функции onConfirm перед переходом на другую страницу.
-    Желательно использовать если необходимо выполнить какие-либо
-    действия перед сменой роута (очистка state от данных и тд.)
-    (при необходимости async поведения можно внести дополнения в код)
-  
-  onBeforeCancel? - callback
-    переданый в него callback будет вызываться при
-    вызове функции onCancel перед закрытием модального (диалогового)
-    окна.
-    Желательно использовать если необходимо выполнить какие-либо
-    дополнительные действия при нажатии на данную кнопку.
-    (при необходимости async поведения можно внести дополнения в код)
-
   children - React Component
     React Component:
       чтобы принять необходимы параметры и передать и в диалоговое окно,
@@ -45,11 +30,11 @@ import PropTypes from 'prop-types';
         переключает статус модального окна true - показывать, false - скрывать
 */
 
-export const CustomPrompt = ({ /* onBeforeConfirm, onBeforeCancel, */ shouldPrompt, children }) => {
+export const CustomPrompt = ({ shouldPrompt, children }) => {
 
   const { 
     onCancel, onConfirm, showDialog, isPromptActive, message 
-  } = useCustomPrompt(/* onBeforeConfirm, onBeforeCancel, */ shouldPrompt);
+  } = useCustomPrompt(shouldPrompt);
 
   return (
     <>
@@ -60,8 +45,6 @@ export const CustomPrompt = ({ /* onBeforeConfirm, onBeforeCancel, */ shouldProm
 }
 
 CustomPrompt.propTypes = {
-  onBeforeConfirm: PropTypes.func, 
-  onBeforeCancel: PropTypes.func, 
   shouldPrompt: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]).isRequired, 
   children: PropTypes.elementType,
 }
