@@ -3,6 +3,7 @@ import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import './App.scss';
 import PromptPage from '../PromptPage';
 import NoPromptPage from '../NoPromptPage';
+import { PromptPage2 } from '../PromptPage2';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
           </nav>
           <Switch >
             <Route path='/page' component={NoPromptPage}/>
-            <Route path='/' exact component={PromptPage}/>
+            {/* <Route path='/' exact component={PromptPage}/> */}
+            <Route path='/' exact>
+              <PromptPage2 onMessage={() => true}/>
+            </Route>
             <Redirect to='/'/>
           </Switch>
         </div>

@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useHistory, useLocation, Prompt} from 'react-router-dom';
 import Modal from '../components/Modal';
 
@@ -34,13 +34,13 @@ const useCustomPrompt = () => {
     }
 
     return (
-      <Fragment>
+      <>
         <Prompt when={when} message={message}/>
         {children && typeof children === 'function'
           ? children(childrenProps)
           : <Modal open={modalIsActive} onConfirm={onConfirm} onCancel={onCancel} {...defaultModalProps}/>
         }
-      </Fragment>
+      </>
     )
   }
 
@@ -49,7 +49,7 @@ const useCustomPrompt = () => {
       history.push(pathTo);
     }
   }, [confirm, pathTo, history])
-  
+
   return { CustomPrompt }
 }
 
