@@ -10,21 +10,19 @@ function App() {
       <div className="content">
         <nav className="nav">
           <NavLink className="nav-link" to="/" exact>
-            Home Page
+            Home Page!
           </NavLink>
           <NavLink className="nav-link" to="/not-allowed-page">
-            Not Allowed Page
+            Not Allowed Page!
           </NavLink>
           <NavLink className="nav-link" to="/allowed-page">
-            Allowed Page
+            Allowed Page!
           </NavLink>
         </nav>
         <Switch>
           <Route path="/allowed-page" component={AllowedPage} />
           <Route path="/not-allowed-page" component={NotAllowedPage} />
-          <Route path="/" exact>
-            <PromptPage />
-          </Route>
+          <Route path="/" exact component={PromptPage} />
           <Redirect to="/" />
         </Switch>
       </div>
