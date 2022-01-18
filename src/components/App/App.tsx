@@ -10,7 +10,7 @@ function App() {
       <div className="content">
         <nav className="nav">
           <NavLink className="nav-link" to="/" exact>
-            Home Page!
+            Home Page
           </NavLink>
           <NavLink className="nav-link" to="/not-allowed-page">
             Not Allowed Page!
