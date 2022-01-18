@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Dialog, Paragraph } from "evergreen-ui";
 import { CustomPrompt } from "../CustomPrompt/";
+import { Modal } from "antd";
 
 export const PromptPage = () => {
   const [isActive, setIsActive] = useState(true);
@@ -36,20 +36,16 @@ export const PromptPage = () => {
         }
       >
         {({ leavePage, stayOnPage, isDialogActive, nextLocation }) => (
-          <Dialog
-            shouldCloseOnOverlayClick={false}
-            shouldCloseOnEscapePress={false}
-            confirmLabel="Yes"
-            cancelLabel="No"
+          <Modal
             title="Do you want to leave the page?"
-            onConfirm={leavePage}
+            visible={isDialogActive}
+            onOk={leavePage}
             onCancel={stayOnPage}
-            isShown={isDialogActive}
           >
-            <Paragraph>
+            <p>
               Next location is <b>{nextLocation}</b>
-            </Paragraph>
-          </Dialog>
+            </p>
+          </Modal>
         )}
       </CustomPrompt>
     </>
