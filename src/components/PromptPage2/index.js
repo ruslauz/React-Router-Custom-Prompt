@@ -17,13 +17,13 @@ export const PromptPage2 = () => {
             <Dialog
               shouldCloseOnOverlayClick={false}
               shouldCloseOnEscapePress={false}
-              confirmLabel='Нет'
-              cancelLabel='Сохранить'
+              confirmLabel='Yes'
+              cancelLabel='No'
               onConfirm={() => onConfirm()}
               onCancel={() => onCancel()}
               hasHeader={false}
               isShown={showDialog}>
-                Сохранить изменения?
+                Do you want to leave the page?
             </Dialog>
           )
         }
