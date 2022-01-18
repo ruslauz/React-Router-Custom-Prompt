@@ -1,4 +1,11 @@
-import React, { FC, memo, useEffect, useRef, useState } from "react";
+import React, {
+  FC,
+  memo,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Prompt, PromptProps, useHistory } from "react-router-dom";
 
 interface CustomPromptProps {
@@ -23,14 +30,14 @@ const CustomPrompt: FC<CustomPromptProps> = ({
   const history = useHistory();
   const { current: startLocation } = useRef(history.location.pathname);
 
-  const leavePage = () => {
+  const leavePage = useCallback(() => {
     setPromptActive(false);
-  };
+  }, []);
 
-  const stayOnPage = () => {
+  const stayOnPage = useCallback(() => {
     setDialogActive(false);
     setNextLocation("");
-  };
+  }, []);
 
   const message: PromptProps["message"] = (location) => {
     const { pathname: nextLocationPathName } = location;
