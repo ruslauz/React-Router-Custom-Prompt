@@ -13,10 +13,10 @@ function App() {
             Home Page
           </NavLink>
           <NavLink className="nav-link" to="/not-allowed-page">
-            Not Allowed Page!
+            Not Allowed Page
           </NavLink>
           <NavLink className="nav-link" to="/allowed-page">
-            Allowed Page!
+            Allowed Page
           </NavLink>
         </nav>
         <Switch>
