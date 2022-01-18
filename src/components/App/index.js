@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react';
 import { NavLink, Switch, Route, Redirect } from 'react-router-dom';
 import './App.scss';
-import PromptPage from '../PromptPage';
+// import PromptPage from '../PromptPage';
 import NoPromptPage from '../NoPromptPage';
 import { PromptPage2 } from '../PromptPage2';
 
@@ -13,13 +13,12 @@ function App() {
           <nav className='nav'>
             <NavLink className='nav-link' to='/' exact>Home Page</NavLink>
             <NavLink className='nav-link' to='/page'>Another Page</NavLink>
-            {/* <NavLink to={{ pathname: 'https://google.com' }} className='nav-link' rel='noreferrer noopener'>External Link</NavLink> */}
           </nav>
           <Switch >
             <Route path='/page' component={NoPromptPage}/>
             {/* <Route path='/' exact component={PromptPage}/> */}
             <Route path='/' exact>
-              <PromptPage2 onMessage={() => true}/>
+              <PromptPage2 />
             </Route>
             <Redirect to='/'/>
           </Switch>

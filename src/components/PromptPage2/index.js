@@ -8,9 +8,9 @@ export const PromptPage2 = () => {
 
   return (
     <>
-      <button onClick={() => setIsActive(prev => !prev)}>ToggleConfirm</button>
-      <h1>PromptPage2</h1>
+      <h1>Click on Another Page link!</h1>
       <p>Is Prompt Active - {`${isActive}`}</p>
+      <button onClick={() => setIsActive(prev => !prev)}>Toggle Custom Prompt</button>
       <CustomPrompt shouldPrompt={isActive}>
         {
           ({ onCancel, onConfirm, showDialog }) => (
