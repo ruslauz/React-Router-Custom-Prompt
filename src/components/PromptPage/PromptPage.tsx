@@ -19,7 +19,7 @@ export const PromptPage = () => {
         </b>{" "}
         should let you leave
       </p>
-      <label style={{ cursor: "pointer" }}>
+      <label>
         <input
           checked={isActive}
           type="checkbox"
@@ -42,8 +42,8 @@ export const PromptPage = () => {
             confirmLabel="Yes"
             cancelLabel="No"
             title="Do you want to leave the page?"
-            onConfirm={() => leavePage()}
-            onCancel={() => stayOnPage()}
+            onConfirm={leavePage}
+            onCancel={stayOnPage}
             isShown={isDialogActive}
           >
             <Paragraph>
