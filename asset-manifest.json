@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/React-Router-Custom-Prompt/static/css/main.1a8141d5.css",
-    "main.js": "/React-Router-Custom-Prompt/static/js/main.014eb360.js",
+    "main.css": "/React-Router-Custom-Prompt/static/css/main.ab025924.css",
+    "main.js": "/React-Router-Custom-Prompt/static/js/main.36d90c55.js",
     "index.html": "/React-Router-Custom-Prompt/index.html"
   },
   "entrypoints": [
-    "static/css/main.1a8141d5.css",
-    "static/js/main.014eb360.js"
+    "static/css/main.ab025924.css",
+    "static/js/main.36d90c55.js"
   ]
 }
